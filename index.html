@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Online Voting Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            VoteSecure
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#candidates">Candidates</a>
+            <a href="#vote">Vote</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tag">
+                ONLINE VOTING MANAGEMENT SYSTEM
+            </p>
+
+            <h1>
+                Your Vote.
+                <span>Your Voice.</span>
+            </h1>
+
+            <p>
+                A simple and user-friendly voting management
+                system designed for digital election simulation.
+            </p>
+
+            <button onclick="goToVoting()">
+                Cast Your Vote
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CANDIDATES -->
+
+    <section class="candidates-section" id="candidates">
+
+        <div class="section-title">
+
+            <p class="tag">
+                ELECTION 2026
+            </p>
+
+            <h2>
+                Candidates
+            </h2>
+
+            <p>
+                Choose your preferred candidate carefully.
+            </p>
+
+        </div>
+
+
+        <div class="candidate-container">
+
+
+            <!-- CANDIDATE 1 -->
+
+            <div class="candidate-card">
+
+                <div class="candidate-icon">
+                    A
+                </div>
+
+                <h3>
+                    Aadhira Kumar
+                </h3>
+
+                <p class="party">
+                    Progress Party
+                </p>
+
+                <p>
+                    Focused on education, technology
+                    and student development.
+                </p>
+
+                <button
+                    onclick="selectCandidate('Aadhira Kumar')"
+                >
+                    Select
+                </button>
+
+            </div>
+
+
+            <!-- CANDIDATE 2 -->
+
+            <div class="candidate-card">
+
+                <div class="candidate-icon">
+                    R
+                </div>
+
+                <h3>
+                    Rahul Sharma
+                </h3>
+
+                <p class="party">
+                    People's Alliance
+                </p>
+
+                <p>
+                    Focused on employment, innovation
+                    and digital development.
+                </p>
+
+                <button
+                    onclick="selectCandidate('Rahul Sharma')"
+                >
+                    Select
+                </button>
+
+            </div>
+
+
+            <!-- CANDIDATE 3 -->
+
+            <div class="candidate-card">
+
+                <div class="candidate-icon">
+                    P
+                </div>
+
+                <h3>
+                    Priya Nair
+                </h3>
+
+                <p class="party">
+                    Future Front
+                </p>
+
+                <p>
+                    Focused on sustainability, equality
+                    and community development.
+                </p>
+
+                <button
+                    onclick="selectCandidate('Priya Nair')"
+                >
+                    Select
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- VOTING SECTION -->
+
+    <section class="voting-section" id="vote">
+
+        <div class="voting-box">
+
+            <p class="tag">
+                CAST YOUR VOTE
+            </p>
+
+            <h2>
+                Make Your Choice
+            </h2>
+
+            <p>
+                Select one candidate and submit your vote.
+            </p>
+
+
+            <div class="selected-box">
+
+                Selected Candidate:
+
+                <strong id="selectedCandidate">
+                    None
+                </strong>
+
+            </div>
+
+
+            <button
+                class="vote-button"
+                onclick="castVote()"
+            >
+                Submit Vote
+            </button>
+
+
+            <p
+                id="message"
+                class="message"
+            ></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="results-section">
+
+        <div class="section-title">
+
+            <p class="tag">
+                LIVE SIMULATION
+            </p>
+
+            <h2>
+                Voting Results
+            </h2>
+
+        </div>
+
+
+        <div class="results-container">
+
+            <div class="result-card">
+
+                <h3>
+                    Aadhira Kumar
+                </h3>
+
+                <div class="progress">
+
+                    <div
+                        id="aadhiraProgress"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+                <p>
+                    <span id="aadhiraVotes">0</span>
+                    votes
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>
+                    Rahul Sharma
+                </h3>
+
+                <div class="progress">
+
+                    <div
+                        id="rahulProgress"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+                <p>
+                    <span id="rahulVotes">0</span>
+                    votes
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>
+                    Priya Nair
+                </h3>
+
+                <div class="progress">
+
+                    <div
+                        id="priyaProgress"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+                <p>
+                    <span id="priyaVotes">0</span>
+                    votes
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <p class="tag">
+                ABOUT
+            </p>
+
+            <h2>
+                About the System
+            </h2>
+
+        </div>
+
+        <p>
+            The Online Voting Management System is a web-based
+            mini project that demonstrates how an electronic
+            voting interface can be designed using HTML, CSS
+            and JavaScript. Users can select a candidate,
+            submit a vote and view simulated voting results.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            VoteSecure
+        </h3>
+
+        <p>
+            Online Voting Management System
+        </p>
+
+        <p>
+            Web Technology Mini Project © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
